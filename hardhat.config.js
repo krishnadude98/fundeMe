@@ -6,6 +6,7 @@ require("hardhat-gas-reporter");
 const GORELLI_RPC_URL = process.env.GORELLI_RPC_URL;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const API_KEY = process.env.ETHERSCAN_API_KEY;
+const POLYGON_API_KEY = process.env.POLYGON_API_KEY;
 const COIN_MARKET_CAP_API_KEY = process.env.COIN_MARKET_CAP_API_KEY;
 module.exports = {
     solidity: "0.8.17",
@@ -20,9 +21,13 @@ module.exports = {
             url: "http://127.0.0.1:8545/",
             chainid: 31337,
         },
+        polygon_mumbai: {
+            url: "https://polygon-mumbai.g.alchemy.com/v2/kTZxIUR6MKogwu-aarjjs5euIVls4j0j",
+            accounts: [PRIVATE_KEY],
+        },
     },
     etherscan: {
-        apiKey: API_KEY,
+        apiKey: POLYGON_API_KEY,
     },
     gasReporter: {
         enabled: true,
